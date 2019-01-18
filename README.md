@@ -280,3 +280,86 @@ Commands
 ## Envelope Encryption
 Customer Master Key -> decrypts -> Envelope / Data Keys 
 Envelope / Data Key -> decrypts -> data
+
+# Other AWS
+## Elastic Beanstalk
+- Deploys and scales your web applications
+- Supports: Java, PHP, Python, Ruby, Go, Docker, .NET and Node.js
+- Application server platforms like Tomcat, Passenger, Puma and IIS
+- Provisions the underlying resources for you
+- Can fully manage the EC2 instances for you
+- Or you can take full administrative control
+- Updates, monitoring, metrics and health checks all included
+- Configuration files written in YAML or JSON
+- Needs .config extension and saved to the .ebextensions folder
+- .ebextensions folder must be in the top level directory of your source code
+
+Deployment Approaches
+
+All at Once
+- Service interruption while the environment is updated
+- To roll back, perform another All at Once upgrade
+
+Rolling
+- Reduced capacity during deployment
+- To roll back, perform another rolling update
+
+Rolling with Additional Batch
+- Maintains full capacity
+- To roll back, perform another rolling update
+
+Immutable
+- Preferred option for mission critical production systems
+- Maintains full capacity
+- To roll back, just delete the new instances and autoscaling group
+
+Launching an RDS instance
+
+Within Elastic Beanstalk
+- When you terminate the Elastic Beanstalk environment the database will also be terminated
+- Quick and easy to add your database and get started
+- Suitable for Dev and Test environments only
+
+Outside Elastic Beanstalk
+- Additional configuration steps required - Security Group and Connection Information
+- Suitable for Production environments, more flexibility
+- Allows connection from multiple environments, you can tear down the application stack without impacting the database
+
+## SQS
+- Distributed message queuing system
+- Allows decoupling the components of an application so they are independent
+- Pull-based not push-based
+- Standard Queues (default): best effort ordering, message delivered at least once)
+- FIFO Queues (First In First Out): ordering strictly preserved, message delivered once, no duplicates (e.g. good for banking transactions which need to happen in a strict order)
+- Visibility Timeout: Default 30 seconds, increase if needed, max 12 hours
+- Short Polling: Returned immediately even if no messages are in the queue
+- Long Polling: Polls the queue periodically and only returns a response when a message is in the queue the timeout has been reached
+
+## SNS
+- Scalable and highly available notification service which allows you to send push notifications from the cloud
+- A variety of message formats are supported: SMS text message, email, Amazon Simple Queue Service (SQS) queues, any HTTP endpoint
+- Pub-sub model whereby users subscribe to topics
+- Push-based not pull
+- Example: a company wanting to send notifications to multiple customers could uses SNS to fan out multiple messages in SQS format using a dedicated SQS queue per customer
+
+## SNS vs SES
+- SES is for email only
+- It can be used for incoming and outgoing mail
+- Not subscription based, only need email
+
+- SNS caters for various formats (SMS, SQS, HTTP, email)
+- Push notifications only
+- Pub/ sub model - consumers must subscribe to a topic
+- You can fan out messages to a large number of recipients
+
+## Kinesis
+Three core services:
+
+Kinesis Streams
+- Video Streams - securely stream video from connected devices to AWS for analytics and machine learning
+- Data Streams - build custom applications and process data in real-time
+
+Kinesis Firehose
+- Capture, transform, load data streams into AWS data stores for near real-time analytics with BI tools
+
+You can configure Lambda to subscribe to a Kinesis Stream and execute a function on your behalf when a new record is detected, before sending the processed data on to its final destination
