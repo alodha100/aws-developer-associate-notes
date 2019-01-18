@@ -4,7 +4,7 @@
 - [IAM](#IAM)
 - [EC2](#EC2)
 - [S3](#S3)
-- [Serverless Computing](#Serverless Computing)
+- [Serverless Computing](#ServerlessComputing)
 - [DynamoDB](#DynamoDB)
 - [KMS](#KMS)
 - [Other AWS](#Other AWS)
