@@ -196,3 +196,58 @@ Languages integrates with:
 - Python
 - Ruby
 - .Net
+
+# DynamoDB
+## 101
+Low-latency NoSQL database
+Consists of Tables, Items and Attributes
+Supports both document and key-value data models
+Supported document formats are JSON, HTML, XML
+2 types of Primary Keys: Partition Key and combination of Partition Key + Sort Key (Composite Key)
+
+Consistency Models:
+- Strongly Consistent
+- Eventually Consistent
+
+dynamodb:LeadingKeys allows users to access only the items where the partition key value matches their user ID
+
+## Indexes
+Enable fast queries on specific data columns
+Provides a different view of your data based on alternative Partition / Sort Keys
+
+Local Secondary Index
+- Must be created when the table is created
+- Same Partition Key as the table
+- Different Sort Key
+
+Global Secondary Index
+- Can be created at any time
+- Different Partition Key
+- Different Sort Key
+
+## Scans vs Queries
+Query Operation
+- Finds items in a table using only the primary key attribute
+- Always sorted by the sort key in ascending order
+- Set ScanIndexForward parameter to false to reverse the order of queries
+- More efficient than scan
+
+Scan operation
+- Examines every item in the table and by default returns all data attributes
+- Use the ProjectionExpression parameter to refine results 
+
+Defining a smaller page size uses fewer read operations
+
+## Provisioned Throughput
+Capacity Units
+
+1 x Write Capacity Unit = 1 x 1KB Write per second
+Size of each item / 1KB
+Round up
+Multiplied by number of write per second
+
+1 x Read Capacity Unit = 1 x 4KB Read per second
+Size of each item / 4KB
+Round up
+Multiplied by the number of reads per second
+If eventual divide by 2
