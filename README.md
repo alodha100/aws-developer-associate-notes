@@ -464,3 +464,34 @@ docker push
 - Managed Policy - AWS-managed default policy
 - Customer Managed Policy - Managed by you
 - Inline Policy - Managed by you and embedded in a single user, group or role
+
+# Monitoring
+## CloudWatch
+CloudWatch is a monitoring service to monitor your AWS resources, as well as the application that you run on AWS
+
+Host Level Metrics:
+- CPU
+- Network
+- Disk
+- Status Check
+
+Ram Utilisation 
+- Custom metric
+
+Custom Metrics
+- Minimum granularity is 1 minute
+
+Terminated Instances
+- You can retreive data from any terminated EC2 or ELB instance after its termination. 
+- CloudWatch Logs by default are stored indefinitely
+
+Metric Granularity
+- 1 minute for detailed monitoring
+- 5 minutes for standard monitoring
+
+CloudWatch can be used on premise - Not restricted to just AWS resources. Just need to download and install the SSM agent and CloudWatch agent
+
+## CloudWatch vs CloudTrail
+- CloudWatch monitors performance
+- CloudTrail monitors API calls in the AWS platform
+- AWS Config records the state of your AWS environment and can notify you of changes
