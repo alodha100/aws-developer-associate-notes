@@ -251,3 +251,32 @@ Size of each item / 4KB
 Round up
 Multiplied by the number of reads per second
 If eventual divide by 2
+
+# KMS
+## 101
+Used to create and control regional encryption keys used to encrypt data
+Integrated with: EBS, S3, RDS etc
+
+Customer Master Key (CMK)
+- Alias
+- Creation Date
+- Description
+- Key State
+- Key Material (provided by customer or AWS)
+- Can NEVER be exported
+
+Setup Customer Master Key
+- Create Alias and Description
+- Choose material option (KMS or your own)
+- Define Administrative Permissions (IAM users / roles) that can administer but not use the key through the KMS api
+- Define Usage Permissions (IAM users / roles) that can use the key to encrypt and decrypt data
+
+Commands
+- aws kms encrypt
+- aws kms decrypt
+- aws kms re-encrypt
+- aws kms enable-key-rotation
+
+## Envelope Encryption
+Customer Master Key -> decrypts -> Envelope / Data Keys 
+Envelope / Data Key -> decrypts -> data
