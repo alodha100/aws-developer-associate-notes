@@ -302,6 +302,7 @@ Commands
 
 ## Envelope Encryption
 Customer Master Key -> decrypts -> Envelope / Data Keys 
+
 Envelope / Data Key -> decrypts -> data
 
 # Other-AWS
