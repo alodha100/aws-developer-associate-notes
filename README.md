@@ -5,7 +5,16 @@
 - [EC2](#EC2)
 
 # IAM
-## 101
+## 101Three core services:
+
+Kinesis Streams
+- Video Streams - securely stream video from connected devices to AWS for analytics and machine learning
+- Data Streams - build custom applications and process data in real-time
+
+Kinesis Firehose
+- Capture, transform, load data streams into AWS data stores for near real-time analytics with BI tools
+
+You can configure Lambda to subscribe to a Kinesis Stream and execute a function on your behalf when a new record is detected, before sending the processed data on to its final destination
 - Consists of:
   - Users
   - Groups
@@ -363,3 +372,76 @@ Kinesis Firehose
 - Capture, transform, load data streams into AWS data stores for near real-time analytics with BI tools
 
 You can configure Lambda to subscribe to a Kinesis Stream and execute a function on your behalf when a new record is detected, before sending the processed data on to its final destination
+
+# Developer Theory
+## CI/CD
+Continuous Integration
+- Merging the code change frequently
+- At least once per day
+- Enables multiple devs to work on the same application
+
+Continuous Delivery
+- Automating the build, test and deployment functions
+
+Continous Deployment
+- Fully automates the entire release process
+- Code is deployed into Production as soon as it has successfully passed through the release pipeline
+
+AWS CodeCommit - Source Control Service (git)
+AWS CodeBuild - Compiles source code, runs test and packages code
+AWS CodeDeploy - Automated Deployment to EC2, on premises systems and Lambda
+AWS CodePipeline - CI/CD workflow tool, fully automates the entire release process (build, test, deployment)
+
+## AWS CodeCommit
+- Source Control Service (GIT)
+- Centralised repository for all your code, binaries, images and libraries
+- Tracks and manages code changes
+- Maintains version history
+- Manages updates from multiple sources and enables collaboration
+
+## AWS CodeDeploy
+- Fully managed automated deployment service
+- Can be used as part of Continuous Delivery or Continuous Deployment
+
+Deployment Approaches
+- In-Place or Rolling update: Application is stopped for each host as the latest code is deployed. EC2 and on premise systems only. To roll back you must re-deploy the previous version of the application
+
+- Blue / Green - New instances are provisioned and the new application is deployed to these new instances. Traffic is routed to the new instances according to your own schedule. Supported for EC2, on-premise systems and Lambda functions. Roll back is easy, just route the traffic back to the original instances. Blue is active deployment, Green is the new release
+
+The AppSpec file defines all the parameters needed for deployment, e.g. location of application files and pre/post deployment validation tests to run
+
+For EC2 / On premises systems, the appspec.yml file must be placed in the root directory of your revisions. Written in YAML
+
+Lambda supports YAML or JSON
+
+Run Order of Hooks
+
+- Before Block traffic -> Block Traffic -> AfterBlockTraffic
+- ApplicationStop
+- BeforeInstall -> Install -> AfterInstall
+- Application Start
+- ValidateService
+- BeforeAllowTraffic -> AllowTraffic -> AfterAllowTraffic
+
+## AWS CodePipeline
+- Continuous Integration / Continuous Deliver service
+- Automates end-to-end software release process based on a user defined workflow
+- Can be configured to automatically trigger your pipeline as soon as a change is detected in your source code repository
+- Integrates with other services from AWS like CodeBuild and CodeDeploy, as well as third part and custom plug-ins
+
+## Docker
+- Docker allows you to package up your software into containers which you can run in Elastic Container Service (ECS)
+- A Docker Container includes everything the software needs to run including code, libraries, runtime and environment variables etc
+- We use a special file called a Dockerfile to specify the instructions needed to assemble your Docker image
+- Once built, Docker images can be stored in Elastic Container Registry (ECR) and ECS can use the image to launch Docker containers
+- Docker Commands to build, tag (apply and alias) and push your docker image to the ECR repository
+
+docker build -t
+docker tag
+docker push
+
+## AWS CodeBuild
+- Fully managed build service, can build source code, run tests and produce software packages based on commands that you define yourself
+- By default the buildspec.yml defines the build commands and settings used by CodeBuild to run your build
+- You can override the settings in buildspec.yml by adding commands in the console when the build is launched
+- If the build fails, check the build logs in the CodeBuild console and you can also view the full CodeBuild log in CloudWatch
