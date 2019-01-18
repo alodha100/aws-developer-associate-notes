@@ -3,13 +3,21 @@
 ## Table of Contents  
 - [IAM](#IAM)
 - [EC2](#EC2)
+- [S3](#S3)
+- [Serverless Computing](#Serverless Computing)
+- [DynamoDB](#DynamoDB)
+- [KMS](#KMS)
+- [Other AWS](#Other AWS)
+- [Developer Theory](#Developer Theory)
+- [Advanced IAM](#Advanced IAM)
+- [Monitoring](#Montoring)
 
 # IAM
 ## 101
-200 = Success<br>
-3XX = Redirection
-4XX = Client Error
-5XX = Server Error
+- 200 = Success
+- 3XX = Redirection
+- 4XX = Client Error
+- 5XX = Server Error
 
 Three core services:
 
