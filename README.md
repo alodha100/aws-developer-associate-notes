@@ -222,11 +222,11 @@ Languages integrates with:
 
 # DynamoDB
 ## 101
-Low-latency NoSQL database
-Consists of Tables, Items and Attributes
-Supports both document and key-value data models
-Supported document formats are JSON, HTML, XML
-2 types of Primary Keys: Partition Key and combination of Partition Key + Sort Key (Composite Key)
+- Low-latency NoSQL database
+- Consists of Tables, Items and Attributes
+- Supports both document and key-value data models
+- Supported document formats are JSON, HTML, XML
+- 2 types of Primary Keys: Partition Key and combination of Partition Key + Sort Key (Composite Key)
 
 Consistency Models:
 - Strongly Consistent
