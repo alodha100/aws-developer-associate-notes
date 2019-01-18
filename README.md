@@ -1,10 +1,10 @@
 # AWS Developer Associate Notes
 # IAM
-Consists of:
-- Users
-- Groups
-- Roles
-- Policy Documents
+- Consists of:
+  - Users
+  - Groups
+  - Roles
+  - Policy Documents
 
 - Universal (does not apply to regions)
 - Root account is the first account created (has complete admin access)
