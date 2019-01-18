@@ -4,7 +4,7 @@
 [IAM](#IAM)
 [EC2](#EC2)
 
-# <a name="IAM"/>IAM
+# IAM
 - Consists of:
   - Users
   - Groups
