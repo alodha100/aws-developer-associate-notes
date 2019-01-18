@@ -18,3 +18,12 @@
 - Use Access keys to access data
 
 - When working on development, you need to use the AWS Access keys to work with the AWS resources
+
+# EC2
+## Instances
+- On Demand - Pay fixed rate by the hour (or second) with no commitment
+Reserved - Capacity reservation and offers a significant discount on the hourly charge for an instance, 1 or 3 year terms
+
+- Spot - Enables bidding for instance capacity, providing greater savings if your applications have flexible start and end times, if the instance is terminated by Amazon EC2 no charge, however you will be charge for the complete hour if you terminate it yourself
+
+- Dedicated Hosts - Physical EC2 server dedicated for use. Can help reduce costs by allowing existing server-bound software licenses to be used
