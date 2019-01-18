@@ -7,9 +7,9 @@
 - [Serverless-Computing](#Serverless-Computing)
 - [DynamoDB](#DynamoDB)
 - [KMS](#KMS)
-- [OtherAWS](#OtherAWS)
-- [Developer Theory](#Developer Theory)
-- [Advanced IAM](#Advanced IAM)
+- [Other-AWS](#Other-AWS)
+- [Developer-Theory](#Developer-Theory)
+- [Advanced-IAM](#Advanced-IAM)
 - [Monitoring](#Montoring)
 
 # IAM
@@ -304,7 +304,7 @@ Commands
 Customer Master Key -> decrypts -> Envelope / Data Keys 
 Envelope / Data Key -> decrypts -> data
 
-# Other AWS
+# Other-AWS
 ## Elastic Beanstalk
 - Deploys and scales your web applications
 - Supports: Java, PHP, Python, Ruby, Go, Docker, .NET and Node.js
@@ -387,7 +387,7 @@ Kinesis Firehose
 
 You can configure Lambda to subscribe to a Kinesis Stream and execute a function on your behalf when a new record is detected, before sending the processed data on to its final destination
 
-# Developer Theory
+# Developer-Theory
 ## CI/CD
 Continuous Integration
 - Merging the code change frequently
@@ -460,7 +460,7 @@ docker push
 - You can override the settings in buildspec.yml by adding commands in the console when the build is launched
 - If the build fails, check the build logs in the CodeBuild console and you can also view the full CodeBuild log in CloudWatch
 
-# Advanced IAM
+# Advanced-IAM
 ## Web Identity Federation
 - Federation allows users to authenticate with a Web Identity Provider (Google, Facebook, Amazon)
 - The user authenticates first with the Web ID provider and receives an authentication token, which is exchanged for temporary AWS credentials allowing them to assume an IAM role
