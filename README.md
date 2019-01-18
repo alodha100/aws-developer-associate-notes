@@ -7,7 +7,7 @@
 - [Serverless-Computing](#Serverless-Computing)
 - [DynamoDB](#DynamoDB)
 - [KMS](#KMS)
-- [Other AWS](#Other AWS)
+- [OtherAWS](#OtherAWS)
 - [Developer Theory](#Developer Theory)
 - [Advanced IAM](#Advanced IAM)
 - [Monitoring](#Montoring)
