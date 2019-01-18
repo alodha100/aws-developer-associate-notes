@@ -4,7 +4,7 @@
 - [IAM](#IAM)
 - [EC2](#EC2)
 - [S3](#S3)
-- [Serverless Computing](#ServerlessComputing)
+- [Serverless-Computing](#Serverless-Computing)
 - [DynamoDB](#DynamoDB)
 - [KMS](#KMS)
 - [Other AWS](#Other AWS)
@@ -170,7 +170,7 @@ Mixed Workloads
 - Avoid sequential names for S3 objects
 - Add a random prefix to the key name to prevent multiple objects being stored on the same partition
 
-# Serverless Computing
+# Serverless-Computing
 ## Lambda
 - Scales out (not up) automatically
 - Functions are independed, 1 event = 1 function
