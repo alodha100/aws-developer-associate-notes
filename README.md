@@ -5,7 +5,13 @@
 - [EC2](#EC2)
 
 # IAM
-## 101Three core services:
+## 101
+200 = Success
+3XX = Redirection
+4XX = Client Error
+5XX = Server Error
+
+Three core services:
 
 Kinesis Streams
 - Video Streams - securely stream video from connected devices to AWS for analytics and machine learning
