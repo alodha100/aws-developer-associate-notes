@@ -1,8 +1,8 @@
 # AWS Developer Associate Notes
 
 ## Table of Contents  
-[IAM](#IAM)
-[EC2](#EC2)
+- [IAM](#IAM)
+- [EC2](#EC2)
 
 # IAM
 - Consists of:
