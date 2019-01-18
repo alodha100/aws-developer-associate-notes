@@ -1,6 +1,6 @@
 # AWS Developer Associate Notes
 
-##### Table of Contents  
+## Table of Contents  
 [IAM](#IAM)
 
 # <a name="IAM"/>IAM
@@ -68,3 +68,79 @@ Create Groups - Assign your users to groups. The users will automatically inheri
 Roles allows you to not use Access Key ID's and Secret Access Keys
 Roles are preferred from a security perspective
 Roles are controlled by policies
+
+# S3
+## S3 - 101
+- Simple Storage Service
+- Object based: allows you to upload files
+- Files are stored in buckets (folders)
+- Not suitable to install an operating system on
+- File can be from 0 bytes to 5 terabytes
+- Largest PUT file = 5GB
+- Unlimited storage
+- Eventual consistency for overwrite PUTS and DELETES
+- Successful uploads will generate a HTTP 200 status code
+
+Storage Classes / Tiers
+- S3 (durable, immediately available, frequently accessed)
+- S3 - IA (durable, immediately available, infrequently accessed)
+- S3 - One Zone IA (same as IA however data is stored in one availability zone)
+- S3 - Reduced Redundancy Storage (easily reproducible data, thumbnails)
+- Glacier - Archived data, where you can wait 3 - 5 hours before accessing
+
+Object Fundamentals
+- Key (name)
+- Value (data)
+- Version ID
+- Metadata
+- Subresources (used to manage bucket specific configuration)
+(Bucket Policies, CORS, Transfer Acceleration)
+
+## Security
+- All newly created buckets are PRIVATE
+- Bucket Policies (bucket level)
+- Access Control Lists (object level)
+- Access logs store all requests made to a bucket
+
+## Encryption
+Encryption In-Transit 
+- SSL/TLS
+Encryption At Rest
+- Server Side (SSE-S3, SSE-KMS, SSE-C)
+- Client Side
+
+Prevent unencrypted files from being uploaded
+- Use a policy which only allows x-amz-server-side-encryption parameter in the request header
+
+Buckets are encrypted by 
+- AES 256 (Advanced Encryption Standard)
+
+## Cross Origin Resource Sharing (CORS)
+- Used to enable cross origin access for your AWS resources
+- E.g. accessing files located in another S3 bucket
+- By default cannot be accessed
+- Always use the S3 website URL not the regular bucket URL
+
+## CloudFront
+Edge Location
+- Cached location, separate from an AWS region
+- Not just read only, you can write to them, e.g put an object on to them
+
+Origin
+- Origin of files CDN will distribute, S3 Bucket, EC2 Instance, Elastic Load Balancer or Route53
+
+Distribution
+- Name of the CDN which consists of edge locations
+- Web Distribution (websites)
+- RTMP (media streaming)
+
+Objects are cached for the life of the TTL (Time To Live)
+You can clear cached objects but will be charged (Invalidation)
+
+## Performance Optimisation
+GET Intensive Workloads 
+- Use CloudFront
+
+Mixed Workloads
+- Avoid sequential names for S3 objects
+- Add a random prefix to the key name to prevent multiple objects being stored on the same partition
