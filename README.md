@@ -445,3 +445,22 @@ docker push
 - By default the buildspec.yml defines the build commands and settings used by CodeBuild to run your build
 - You can override the settings in buildspec.yml by adding commands in the console when the build is launched
 - If the build fails, check the build logs in the CodeBuild console and you can also view the full CodeBuild log in CloudWatch
+
+# Advanced IAM
+## Web Identity Federation
+- Federation allows users to authenticate with a Web Identity Provider (Google, Facebook, Amazon)
+- The user authenticates first with the Web ID provider and receives an authentication token, which is exchanged for temporary AWS credentials allowing them to assume an IAM role
+
+## Cognito
+- Cognito is an Identity Broker which handles interaction between your applications and the Web ID provider (no code required)
+- Provides sign-up, sign-in and guest user access
+- Syncs user data for a seamless experience across your devices
+- Cognito is the AWS recommended approach for Web ID Federation particularly for mobile apps
+- Uses User Pools to manage user sign-up and sign-in directly or via Web Identity Providers
+- Acts as an Identity Broker, handling all interaction with Web Identity Providers
+- Uses Push Synchronisation to send a silent push notification of user data updates to multiple device types associated with a user ID
+
+## Policies
+- Managed Policy - AWS-managed default policy
+- Customer Managed Policy - Managed by you
+- Inline Policy - Managed by you and embedded in a single user, group or role
