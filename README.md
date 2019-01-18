@@ -264,16 +264,16 @@ Defining a smaller page size uses fewer read operations
 ## Provisioned Throughput
 Capacity Units
 
-1 x Write Capacity Unit = 1 x 1KB Write per second
-Size of each item / 1KB
-Round up
-Multiplied by number of write per second
+1 x Write Capacity Unit = 1 x 1KB Write per second <br>
+Size of each item / 1KB <br>
+Round up <br>
+Multiplied by number of write per second <br>
 
-1 x Read Capacity Unit = 1 x 4KB Read per second
-Size of each item / 4KB
-Round up
-Multiplied by the number of reads per second
-If eventual divide by 2
+1 x Read Capacity Unit = 1 x 4KB Read per second <br>
+Size of each item / 4KB <br>
+Round up <br>
+Multiplied by the number of reads per second <br>
+If eventual divide by 2 <br>
 
 # KMS
 ## 101
