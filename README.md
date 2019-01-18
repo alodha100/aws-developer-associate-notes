@@ -2,7 +2,6 @@
 
 ## Table of Contents  
 - [IAM](#IAM)
-  - [101](#101)
 - [EC2](#EC2)
 
 # IAM
@@ -147,3 +146,53 @@ GET Intensive Workloads
 Mixed Workloads
 - Avoid sequential names for S3 objects
 - Add a random prefix to the key name to prevent multiple objects being stored on the same partition
+
+# Serverless Computing
+## Lambda
+- Scales out (not up) automatically
+- Functions are independed, 1 event = 1 function
+- Serverless (like DynamoDB, S3)
+- Functions can trigger other functions
+- AWS X-ray allows debugging of functions
+- Global, can be used to back up S3 buckets to other S3 buckets
+
+## API Gateway
+- Has caching capabilities to increase performance
+- Low cost and scales automatically
+- Can throttle to prevent attacks
+- Results can be logged to CloudWatch
+- Enable CORS for multiple domains, enforced by the client
+- Use stage variables for separate environments
+
+## Version Control
+- Can have multiple versions of lambda functions
+- Latest version = $latest
+- Qualified versions will use $latest, unqualified will not
+- Version are immutable (cannot be changed)
+- Can split traffic using alias to different versions
+- Cannot be split with $latest, instead create an alias
+
+## Step Functions
+- Visualises your serverless application
+- Automatically triggers and tracks each step
+- Logs the state of each step so can track what went wrong and where
+
+## X-Ray
+- Interceptors to add to your code to trace incoming HTTP requests
+- Client handlers to instrument AWS SDK clients that your application uses to call other AWS services
+- An HTTP client to use to instrument calls to other internal and external HTTP web services
+
+Services integrates with:
+- Elastic Load Balancing
+- AWS Lambda
+- Amazon API Gateway
+- Amazon Elastic Compute Cloud
+- AWS Elastic Beanstalk
+
+Languages integrates with:
+- Java
+- Go
+- Node.js
+- Python
+- Ruby
+- .Net
