@@ -13,7 +13,7 @@
 - [Monitoring](#Monitoring)
 
 # IAM
-Error codes
+Error Codes:
 - 200 = Success
 - 3XX = Redirection
 - 4XX = Client Error
