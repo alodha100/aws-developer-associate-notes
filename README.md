@@ -385,7 +385,7 @@ Outside Elastic Beanstalk
 
 - Long Polling: 
   - Polls the queue periodically and only returns a response when a message is in the queue the timeout has been reached
-  - Cheap
+  - Cheaper
 
 ## SNS
 - Scalable and highly available notification service which allows you to send push notifications from the cloud
