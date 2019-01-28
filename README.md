@@ -352,8 +352,8 @@ Outside Elastic Beanstalk
 - Pull-based not push-based
 
 - Standard Queues:
- - Default Option
- - Best effort ordering, message delivered at least once
+  - Default Option
+  - Best effort ordering, message delivered at least once
 
 - FIFO Queues (First In First Out): 
  - Ordering strictly preserved
