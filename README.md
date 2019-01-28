@@ -350,11 +350,23 @@ Outside Elastic Beanstalk
 - Distributed message queuing system
 - Allows decoupling the components of an application so they are independent
 - Pull-based not push-based
-- Standard Queues (default): best effort ordering, message delivered at least once)
-- FIFO Queues (First In First Out): ordering strictly preserved, message delivered once, no duplicates (e.g. good for banking transactions which need to happen in a strict order)
-- Visibility Timeout: Default 30 seconds, increase if needed, max 12 hours
-- Short Polling: Returned immediately even if no messages are in the queue
-- Long Polling: Polls the queue periodically and only returns a response when a message is in the queue the timeout has been reached
+
+- Standard Queues:
+-- Default Option
+-- Best effort ordering, message delivered at least once
+
+- FIFO Queues (First In First Out): 
+-- Ordering strictly preserved
+-- Message delivered once
+-- No duplicates (e.g. good for banking transactions which need to happen in a strict order)
+
+- Visibility Timeout: 
+-- Default 30 seconds, increase if needed, max 12 hours
+
+- Short Polling: 
+-- Returned immediately even if no messages are in the queue
+- Long Polling: 
+-- Polls the queue periodically and only returns a response when a message is in the queue the timeout has been reached
 
 ## SNS
 - Scalable and highly available notification service which allows you to send push notifications from the cloud
