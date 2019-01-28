@@ -13,7 +13,6 @@
 - [Monitoring](#Monitoring)
 
 # IAM
-## 101
 Error codes
 - 200 = Success
 - 3XX = Redirection
@@ -96,7 +95,6 @@ Roles are preferred from a security perspective
 Roles are controlled by policies
 
 # S3
-## S3 - 101
 - Simple Storage Service
 - Object based: allows you to upload files
 - Files are stored in buckets (folders)
@@ -222,7 +220,6 @@ Languages integrates with:
 - .Net
 
 # DynamoDB
-## 101
 - Low-latency NoSQL database
 - Consists of Tables, Items and Attributes
 - Supports both document and key-value data models
@@ -277,7 +274,6 @@ Multiplied by the number of reads per second <br>
 If eventual divide by 2 <br>
 
 # KMS
-## 101
 Used to create and control regional encryption keys used to encrypt data
 Integrated with: EBS, S3, RDS etc
 
