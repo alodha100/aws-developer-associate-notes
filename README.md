@@ -10,7 +10,7 @@
 - [Other-AWS](#Other-AWS)
 - [Developer-Theory](#Developer-Theory)
 - [Advanced-IAM](#Advanced-IAM)
-- [Monitoring](#Montoring)
+- [Monitoring](#Monitoring)
 
 # IAM
 ## 101
