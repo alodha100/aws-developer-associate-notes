@@ -13,12 +13,6 @@
 - [Monitoring](#Monitoring)
 
 # IAM
-Error Codes:
-- 200 = Success
-- 3XX = Redirection
-- 4XX = Client Error
-- 5XX = Server Error
-
 Three core services:
 
 Kinesis Streams
@@ -303,6 +297,12 @@ Customer Master Key -> decrypts -> Envelope / Data Keys
 Envelope / Data Key -> decrypts -> data
 
 # Other-AWS
+Error Codes:
+- 200 = Success
+- 3XX = Redirection
+- 4XX = Client Error
+- 5XX = Server Error
+
 ## Elastic Beanstalk
 - Deploys and scales your web applications
 - Supports: Java, PHP, Python, Ruby, Go, Docker, .NET and Node.js
