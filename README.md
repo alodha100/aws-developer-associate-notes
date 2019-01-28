@@ -14,6 +14,7 @@
 
 # IAM
 ## 101
+Error codes
 - 200 = Success
 - 3XX = Redirection
 - 4XX = Client Error
