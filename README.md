@@ -348,26 +348,44 @@ Outside Elastic Beanstalk
 
 ## SQS
 - Distributed message queuing system
+- E.g. Assigns jobs into queue then EC2 instance polls the queue looking for jobs to do
+- Messages:
+  - 256kb in size 
+  - Can be retrieved using the API
+  - Default retention period is 4 days
+  - Can be kept from 1 minute to 14 days
 - Allows decoupling the components of an application so they are independent
-- Pull-based not push-based
+- Pull-based only, NOT push-based
+- Enables decoupling the components of an application so they run independently, easing message management
+- Any component can store messages in the queue
+- Can be autoscaled
 
 - Standard Queues:
-  - Default Option
-  - Best effort ordering, message delivered at least once
+  - Default Type
+  - Unlimited transactions per second
+  - Messages are delivered at least once, may be duplicates
+  - Best effort ordering however not guaranteed, messages may arrive out of order
 
-- FIFO Queues (First In First Out): 
+- FIFO (First In First Out) Queues:
+  - Limited to 300 transactions per second
+  - Messages are delivered only once
   - Ordering strictly preserved
-  - Message delivered once
   - No duplicates (e.g. good for banking transactions which need to happen in a strict order)
 
 - Visibility Timeout: 
+  - The amount of time the message is invisible after the message is picked up
   - Default 30 seconds, increase if needed, max 12 hours
+  - Once processed the message is deleted
+  - If the message is not processed in that time it will become visible again
+  - This could result in messages being delivered more than once
 
 - Short Polling: 
   - Returned immediately even if no messages are in the queue
+  - Expensive
 
 - Long Polling: 
   - Polls the queue periodically and only returns a response when a message is in the queue the timeout has been reached
+  - Cheap
 
 ## SNS
 - Scalable and highly available notification service which allows you to send push notifications from the cloud
