@@ -224,7 +224,7 @@ Consistency Models:
 - Strongly Consistent
 - Eventually Consistent
 
-dynamodb:LeadingKeys allows users to access only the items where the partition key value matches their user ID
+- dynamodb:LeadingKeys allows users to access only the items where the partition key value matches their user ID
 
 ## Indexes
 Enable fast queries on specific data columns
