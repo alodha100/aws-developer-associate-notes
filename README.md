@@ -491,11 +491,11 @@ docker push
 
 # Advanced-IAM
 ## Web Identity Federation
-- Federation allows users to authenticate with a Web Identity Provider (Google, Facebook, Amazon)
+- Allows users to authenticate with a Web Identity Provider (Google, Facebook, Amazon)
 - The user authenticates first with the Web ID provider and receives an authentication token, which is exchanged for temporary AWS credentials allowing them to assume an IAM role
 
 ## Cognito
-- Cognito is an Identity Broker which handles interaction between your applications and the Web ID provider (no code required)
+- Identity Broker which handles interaction between your applications and the Web Identity Provider (no code required)
 - Provides sign-up, sign-in and guest user access
 - Syncs user data for a seamless experience across your devices
 - Cognito is the AWS recommended approach for Web ID Federation particularly for mobile apps
